@@ -5,51 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Projeto MVP - Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
-
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <main>
-        <h1>Formulário de Atendimento</h1>
-        <p>Preencha os dados abaixo para enviar sua solicitação:</p>
-    <div class="container" >
-        <form action="#" method="POST">
-            <div class="form-label">
-                <div class="form-control">
-            <div>
-                <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" id="nome" placeholder="Digite seu nome" required>
-            </div>
-
-            <br>
-
-            <div>
-                <label for="email">E-mail de Contato:</label>
-                <input type="email" id="email" id="email" placeholder="seuemail@email.com" required>
-                <div class="form-text"></div>
-            </div>
-            <div class="form-text"><div class="form-text"></div>
-                    <option value="orcamento">Solicitar Orçamento</option>
-                    <option value="suporte">Suporte Técnico</option>
-                </select>
-            </div>
-
-            <div class="form-text">
-                <div class="text-center">
-                    <div class="text-muted">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..."></textarea>
-            </div>
-
-            <button class="btn-solid theme-primary" type="submit">Enviar Solicitação</button>
-        </form>
-    </div>
-
+    <main class="container my-5">
+        <h1 class="text-center">Formulário de Atendimento</h1>
+        <p class="text-center">Preencha os dados abaixo para enviar sua solicitação:</p>
         
+        <!-- Removida a classe form-control do <form> para não quebrar o layout externo -->
+        <form action="#" method="POST" class="p-4 border rounded shadow-sm bg-body">
+            <!-- g-3 cria um espaçamento (gutter) padrão entre as colunas -->
+            <div class="row g-3">
+                
+                <!-- Coluna 1: Nome (Metade da largura em telas médias/grandes) -->
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome Completo:</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                </div>
+    
+                <!-- Coluna 2: Email (Metade da largura em telas médias/grandes) -->
+                <div class="col-md-6">
+                    <label for="email" class="form-label">E-mail de Contato:</label>
+                    <input type="email" class="form-control" id="email" placeholder="seuemail@email.com" required>
+                </div>
+    
+                <!-- Coluna 3: Tipo de Solicitação (Ocupa a linha toda) -->
+                <div class="col-12">
+                    <label for="tipo_solicitacao" class="form-label">Tipo de Solicitação:</label>
+                    <select class="form-control form-select" id="tipo_solicitacao" name="opcao">
+                        <option value="orcamento">Solicitar Orçamento</option>
+                        <option value="suporte">Suporte Técnico</option>
+                    </select>
+                </div>
+
+                <!-- Coluna 4: Mensagem (Ocupa a linha toda) -->
+                <div class="col-12">
+                    <label for="mensagem" class="form-label">Mensagem:</label>
+                    <textarea class="form-control" id="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+    
+                <!-- Botão de Envio -->
+                <div class="col-12 text-center mt-4">
+                    <button class="btn btn-solid theme-primary w-50" type="submit">Enviar Solicitação</button>
+                </div>
+            </div>
+        </form>
     </main>
 
-    <footer>
+    <footer class="text-center my-4">
         <p>Desenvolvido por: <strong>Heloise Lopes Lacerda</strong> — 2026</p>
         <p><small>Projeto MVP • Colégio Bento Munhoz</small></p>
     </footer>
